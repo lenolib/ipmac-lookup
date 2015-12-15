@@ -7,16 +7,18 @@ found.
 Usage:
 ------
 File:
-    cat my_ip_and_mac_addresses.txt | ./ipmac_lookup.py
+
+    $ cat my_ip_and_mac_addresses.txt | ./ipmac_lookup.py
 
 Local subnet:
-    sudo arp-scan 192.168.1.0/24 | ./ipmac_lookup.py
+
+    $ sudo arp-scan 192.168.1.0/24 | ./ipmac_lookup.py
 
 Local ip address:
-    arp 192.168.1.1 | ./ipmac_lookup.py
- Output:
+
+    $ arp 192.168.1.1 | ./ipmac_lookup.py
     Address          HWtype  HWaddress           Flags Mask  Iface
-    192.168.122.1    ether   38:2c:4b:aa:bb:cc   C           eth0    ASUSTek COMPUTER INC.   somehostname.local
+    192.168.1.1    ether   38:2c:4b:aa:bb:cc   C           eth0    ASUSTek COMPUTER INC.   somehostname.local
 
 The script currently processes all stdin at once, because executing
 `avahi-resolve-address` on a bunch of IP addresses is a lot faster than
